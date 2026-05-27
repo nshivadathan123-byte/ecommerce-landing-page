@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auris Pro X - Premium Wireless Headphones</title>
+    <link rel="preload" href="./assets/headphones_main.webp" as="image" fetchpriority="high">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="brand">
+            <span class="brand-name">AURIS</span>
+            <span class="brand-sub">Premium Audio</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#overview">Overview</a></li>
+            <li><a href="#specs">Specs</a></li>
+            <li><a href="#reviews">Reviews</a></li>
+        </ul>
+        <div class="nav-actions">
+            <button class="theme-toggle-btn" id="themeToggleBtn" title="Toggle Theme">☀️</button>
+            <button class="cart-btn" id="cartBtn">
+                🛒 Cart <span class="cart-count" id="cartCount">0</span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Ticker -->
+    <div class="ticker">
+        <span>FREE SHIPPING &nbsp;// &nbsp;30-DAY RETURNS &nbsp;// &nbsp;INDUSTRY-LEADING ANC &nbsp;// &nbsp;30HR
+            BATTERY &nbsp;// &nbsp;HI-RES AUDIO &nbsp;// &nbsp;FREE SHIPPING &nbsp;// &nbsp;30-DAY RETURNS &nbsp;//
+            &nbsp;INDUSTRY-LEADING ANC &nbsp;// &nbsp;30HR BATTERY &nbsp;// &nbsp;HI-RES AUDIO &nbsp;//</span>
+    </div>
+
+    <!-- Main Content -->
+    <main id="overview">
+
+        <!-- Product Section -->
+        <section class="product-section">
+
+            <!-- Image Gallery -->
+            <div class="gallery">
+                <img src="./assets/headphones_main.webp" alt="Auris Pro X" class="main-img" id="mainImg" fetchpriority="high">
+                <div class="thumbnails">
+                    <img src="./assets/headphones_main.webp" alt="Front view" class="thumb active"
+                        data-src="./assets/headphones_main.webp">
+                    <img src="./assets/headphones_detail.webp" alt="Earpad detail" class="thumb"
+                        data-src="./assets/headphones_detail.webp">
+                    <img src="./assets/headphones_use.webp" alt="In use" class="thumb"
+                        data-src="./assets/headphones_use.webp">
+                </div>
+            </div>
+
+            <!-- Product Info -->
+            <div class="product-info">
+                <span class="badge">FLAGSHIP SERIES</span>
+                <h1>Auris Pro X</h1>
+                <p class="subtitle">Premium Wireless Noise Cancelling Headphones</p>
+                <p class="price" id="productPrice">$399.99</p>
+                <p class="description">
+                    Engineered with dual noise cancelling processors and eight active sensing microphones.
+                    The Auris Pro X delivers industry-leading ANC, an ultra-comfortable fit, and
+                    high-fidelity Bluetooth audio for crystal-clear sound in any environment.
+                </p>
+
+                <!-- Quantity -->
+                <div class="qty-section">
+                    <label>Quantity</label>
+                    <div class="qty-controls">
+                        <button id="qtyDown">-</button>
+                        <span id="qtyNum">1</span>
+                        <button id="qtyUp">+</button>
+                    </div>
+                </div>
+
+                <button class="add-to-cart" id="addToCartBtn">Add to Cart</button>
+            </div>
+
+        </section>
+
+        <!-- Specs Section -->
+        <section class="specs-section" id="specs">
+
+            <!-- Key Numbers -->
+            <div class="metrics-box">
+                <h2>Product Metrics</h2>
+                <div class="metrics-grid">
+                    <div class="metric">
+                        <div class="metric-label">Battery Life</div>
+                        <div class="metric-value">30 HRS</div>
+                        <div class="metric-note">With ANC on</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Noise Cancellation</div>
+                        <div class="metric-value">ACTIVE</div>
+                        <div class="metric-note">Industry leading</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Frequency Range</div>
+                        <div class="metric-value">4–40k Hz</div>
+                        <div class="metric-note">Hi-Res capable</div>
+                    </div>
+                    <div class="metric highlight">
+                        <div class="metric-label">Quick Charge</div>
+                        <div class="metric-value">3 MIN</div>
+                        <div class="metric-note">= 5 hours playback</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Specs Table -->
+            <div class="specs-box">
+                <h2>Technical Specifications</h2>
+                <table class="specs-table">
+                    <thead>
+                        <tr>
+                            <th>Component</th>
+                            <th>Specification</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Microphone Array</td>
+                            <td>8 Miniature beamforming sensors</td>
+                            <td>Optimal</td>
+                        </tr>
+                        <tr>
+                            <td>Driver Core</td>
+                            <td>30mm Neodymium dome unit</td>
+                            <td>Hi-Res Capable</td>
+                        </tr>
+                        <tr>
+                            <td>Bluetooth</td>
+                            <td>Multipoint v5.2</td>
+                            <td>Dual-Sync</td>
+                        </tr>
+                        <tr>
+                            <td>Sound Engine</td>
+                            <td>AI upscaling with DSP matrix</td>
+                            <td>Active</td>
+                        </tr>
+                        <tr>
+                            <td>Codec Support</td>
+                            <td>SBC, AAC, LDAC</td>
+                            <td>Nominal</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </section>
+
+        <!-- Reviews Section -->
+        <section class="reviews-section" id="reviews">
+            <h2>Customer Reviews</h2>
+            <div class="reviews-grid">
+
+                <div class="review-card">
+                    <div class="reviewer">Sarah J. <span class="stars">★★★★★</span></div>
+                    <p class="verified">Verified Buyer</p>
+                    <p>"The noise cancellation is unparalleled. Commuting through heavy city noise becomes a quiet
+                        haven. Exceptional audio quality."</p>
+                </div>
+
+                <div class="review-card">
+                    <div class="reviewer">David M. <span class="stars">★★★★★</span></div>
+                    <p class="verified">Verified Buyer</p>
+                    <p>"Dual Multipoint works perfectly — linked to both my laptop and phone at once. Calls are crystal
+                        clear even outdoors."</p>
+                </div>
+
+                <div class="review-card">
+                    <div class="reviewer">Elena R. <span class="stars">★★★★☆</span></div>
+                    <p class="verified">Verified Buyer</p>
+                    <p>"Lightweight and comfortable for long sessions. The ear pads fit snugly. Sound is beautifully
+                        balanced. Highly recommended."</p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Newsletter -->
+        <section class="newsletter-section" id="contact">
+            <div class="newsletter-box">
+                <h2>Stay Updated</h2>
+                <p>Subscribe to get exclusive offers and product news.</p>
+                <form id="newsletterForm">
+                    <input type="email" id="emailInput" placeholder="Enter your email" required>
+                    <button type="submit">Subscribe</button>
+                </form>
+                <p class="success-msg hidden" id="successMsg">✓ You're subscribed!</p>
+            </div>
+
+            <div class="contact-box">
+                <h2>Contact Us</h2>
+                <p><strong>Address:</strong> Auris Audio, 1 Sound Street, London, UK</p>
+                <p><strong>Support:</strong> support@auris-audio.com</p>
+                <div class="contact-links">
+                    <a href="#">Website</a>
+                    <a href="#">Community</a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2026 Auris Audio Ltd. All rights reserved.</p>
+        <p>Privacy Policy &nbsp;|&nbsp; Terms of Service</p>
+    </footer>
+
+    <!-- Cart Drawer -->
+    <div class="cart-drawer" id="cartDrawer">
+        <div class="cart-header">
+            <h3>Your Cart</h3>
+            <button id="closeCart">✕</button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <p class="empty-msg">Your cart is empty.</p>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-row">
+                <span>Subtotal</span>
+                <span id="cartSubtotal">$0.00</span>
+            </div>
+            <div class="cart-row">
+                <span>Shipping</span>
+                <span class="free">FREE</span>
+            </div>
+            <div class="cart-row total">
+                <span>Total</span>
+                <span id="cartTotal">$0.00</span>
+            </div>
+            <button class="checkout-btn" id="checkoutBtn" disabled>Proceed to Checkout</button>
+        </div>
+    </div>
+    <div class="overlay" id="overlay"></div>
+
+    <!-- Order Success Modal -->
+    <div class="modal" id="modal">
+        <div class="modal-box">
+            <div class="checkmark">✓</div>
+            <h2>Order Placed!</h2>
+            <p>Thank you for your purchase. A confirmation email will be sent shortly.</p>
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+            <button id="closeModal">Return to Shop</button>
+        </div>
+    </div>
+
+    <script src="script.js" defer></script>
+</body>
+
+</html>
