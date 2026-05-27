@@ -197,22 +197,29 @@ newsletterForm.addEventListener('submit', function(e) {
     }
 });
 
-// ---- Theme Toggle ----
-themeToggleBtn.addEventListener('click', function() {
-    document.body.classList.toggle('light-mode');
-    if (document.body.classList.contains('light-mode')) {
+// ---- Theme Toggle (Browser Preference & Manual Override) ----
+function applyTheme(isLight) {
+    if (isLight) {
+        document.body.classList.add('light-mode');
         themeToggleBtn.textContent = '🌙';
-        localStorage.setItem('theme', 'light');
     } else {
+        document.body.classList.remove('light-mode');
         themeToggleBtn.textContent = '☀️';
-        localStorage.setItem('theme', 'dark');
     }
+}
+
+// Initialize based on browser preference
+const prefersLight = window.matchMedia('(prefers-color-scheme: light)');
+applyTheme(prefersLight.matches);
+
+// Listen for browser preference changes
+prefersLight.addEventListener('change', function(e) {
+    applyTheme(e.matches);
 });
 
-// Load theme on startup
-var savedTheme = localStorage.getItem('theme');
-if (savedTheme === 'light') {
-    document.body.classList.add('light-mode');
-    themeToggleBtn.textContent = '🌙';
-}
+// Manual override
+themeToggleBtn.addEventListener('click', function() {
+    const isCurrentlyLight = document.body.classList.contains('light-mode');
+    applyTheme(!isCurrentlyLight);
+});
 
