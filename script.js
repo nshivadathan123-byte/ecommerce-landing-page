@@ -31,15 +31,15 @@ const successMsg = document.getElementById('successMsg');
 const themeToggleBtn = document.getElementById('themeToggleBtn');
 
 // ---- Image Gallery ----
-thumbs.forEach(function(thumb) {
-    thumb.addEventListener('click', function() {
+thumbs.forEach(function (thumb) {
+    thumb.addEventListener('click', function () {
         // Remove active from all thumbs
-        thumbs.forEach(function(t) { t.classList.remove('active'); });
+        thumbs.forEach(function (t) { t.classList.remove('active'); });
         thumb.classList.add('active');
 
         // Swap main image
         mainImg.style.opacity = '0.3';
-        setTimeout(function() {
+        setTimeout(function () {
             mainImg.src = thumb.getAttribute('data-src');
             mainImg.style.opacity = '1';
         }, 150);
@@ -47,7 +47,7 @@ thumbs.forEach(function(thumb) {
 });
 
 // ---- Quantity ----
-qtyUp.addEventListener('click', function() {
+qtyUp.addEventListener('click', function () {
     if (qty < MAX_QTY) {
         qty++;
         qtyNum.textContent = qty;
@@ -56,7 +56,7 @@ qtyUp.addEventListener('click', function() {
     }
 });
 
-qtyDown.addEventListener('click', function() {
+qtyDown.addEventListener('click', function () {
     if (qty > 1) {
         qty--;
         qtyNum.textContent = qty;
@@ -79,7 +79,7 @@ closeCart.addEventListener('click', closeCartDrawer);
 overlay.addEventListener('click', closeCartDrawer);
 
 // ---- Add to Cart ----
-addToCartBtn.addEventListener('click', function() {
+addToCartBtn.addEventListener('click', function () {
     // Check if item already in cart
     var existing = null;
     for (var i = 0; i < cart.length; i++) {
@@ -133,12 +133,12 @@ function renderCart() {
         div.className = 'cart-item';
         div.innerHTML =
             '<div class="cart-item-top">' +
-                '<span class="cart-item-name">' + item.name + '</span>' +
-                '<button class="cart-item-remove" data-index="' + i + '">Remove</button>' +
+            '<span class="cart-item-name">' + item.name + '</span>' +
+            '<button class="cart-item-remove" data-index="' + i + '">Remove</button>' +
             '</div>' +
             '<div class="cart-item-bottom">' +
-                '<span class="cart-item-qty">Qty: ' + item.qty + '</span>' +
-                '<span class="cart-item-price">$' + itemTotal.toFixed(2) + '</span>' +
+            '<span class="cart-item-qty">Qty: ' + item.qty + '</span>' +
+            '<span class="cart-item-price">$' + itemTotal.toFixed(2) + '</span>' +
             '</div>';
 
         cartItems.appendChild(div);
@@ -150,8 +150,8 @@ function renderCart() {
 
     // Remove buttons
     var removeBtns = cartItems.querySelectorAll('.cart-item-remove');
-    removeBtns.forEach(function(btn) {
-        btn.addEventListener('click', function() {
+    removeBtns.forEach(function (btn) {
+        btn.addEventListener('click', function () {
             var index = parseInt(btn.getAttribute('data-index'));
             cart.splice(index, 1);
             renderCart();
@@ -160,20 +160,20 @@ function renderCart() {
 }
 
 // ---- Checkout ----
-checkoutBtn.addEventListener('click', function() {
+checkoutBtn.addEventListener('click', function () {
     closeCartDrawer();
     modal.classList.add('show');
     progressFill.style.width = '0%';
 
-    setTimeout(function() {
+    setTimeout(function () {
         progressFill.style.width = '100%';
     }, 100);
 
-    var timer = setTimeout(function() {
+    var timer = setTimeout(function () {
         finishOrder();
     }, 3500);
 
-    closeModal.addEventListener('click', function() {
+    closeModal.addEventListener('click', function () {
         clearTimeout(timer);
         finishOrder();
     }, { once: true });
@@ -186,12 +186,12 @@ function finishOrder() {
 }
 
 // ---- Newsletter ----
-newsletterForm.addEventListener('submit', function(e) {
+newsletterForm.addEventListener('submit', function (e) {
     e.preventDefault();
     if (emailInput.value.trim() !== '') {
         successMsg.classList.remove('hidden');
         emailInput.value = '';
-        setTimeout(function() {
+        setTimeout(function () {
             successMsg.classList.add('hidden');
         }, 5000);
     }
@@ -213,12 +213,12 @@ const prefersLight = window.matchMedia('(prefers-color-scheme: light)');
 applyTheme(prefersLight.matches);
 
 // Listen for browser preference changes
-prefersLight.addEventListener('change', function(e) {
+prefersLight.addEventListener('change', function (e) {
     applyTheme(e.matches);
 });
 
 // Manual override
-themeToggleBtn.addEventListener('click', function() {
+themeToggleBtn.addEventListener('click', function () {
     const isCurrentlyLight = document.body.classList.contains('light-mode');
     applyTheme(!isCurrentlyLight);
 });
