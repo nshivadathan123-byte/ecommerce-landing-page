@@ -1,12 +1,9 @@
-// Auris Pro X - Shopping Cart Script
-
 const PRICE = 399.99;
 const MAX_QTY = 5;
 
 let cart = [];
 let qty = 1;
 
-// Get elements
 const mainImg = document.getElementById('mainImg');
 const thumbs = document.querySelectorAll('.thumb');
 const qtyNum = document.getElementById('qtyNum');
@@ -33,11 +30,9 @@ const themeToggleBtn = document.getElementById('themeToggleBtn');
 // ---- Image Gallery ----
 thumbs.forEach(function (thumb) {
     thumb.addEventListener('click', function () {
-        // Remove active from all thumbs
         thumbs.forEach(function (t) { t.classList.remove('active'); });
         thumb.classList.add('active');
 
-        // Swap main image
         mainImg.style.opacity = '0.3';
         setTimeout(function () {
             mainImg.src = thumb.getAttribute('data-src');
@@ -95,7 +90,6 @@ addToCartBtn.addEventListener('click', function () {
         cart.push({ name: 'Auris Pro X', price: PRICE, qty: qty });
     }
 
-    // Reset qty
     qty = 1;
     qtyNum.textContent = 1;
 
@@ -148,7 +142,6 @@ function renderCart() {
     cartTotal.textContent = '$' + total.toFixed(2);
     checkoutBtn.disabled = false;
 
-    // Remove buttons
     var removeBtns = cartItems.querySelectorAll('.cart-item-remove');
     removeBtns.forEach(function (btn) {
         btn.addEventListener('click', function () {
@@ -208,16 +201,13 @@ function applyTheme(isLight) {
     }
 }
 
-// Initialize based on browser preference
 const prefersLight = window.matchMedia('(prefers-color-scheme: light)');
 applyTheme(prefersLight.matches);
 
-// Listen for browser preference changes
 prefersLight.addEventListener('change', function (e) {
     applyTheme(e.matches);
 });
 
-// Manual override
 themeToggleBtn.addEventListener('click', function () {
     const isCurrentlyLight = document.body.classList.contains('light-mode');
     applyTheme(!isCurrentlyLight);
